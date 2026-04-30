@@ -19,8 +19,8 @@ are always available.  They are listed here in alphabetical order.
 | |  :func:`ascii`        | |  :func:`filter`     | |  :func:`map`        | |  **S**                |
 | |                       | |  :func:`float`      | |  :func:`max`        | |  |func-set|_          |
 | |  **B**                | |  :func:`format`     | |  |func-memoryview|_ | |  :func:`setattr`      |
-| |  :func:`bin`          | |  |func-frozenset|_  | |  :func:`min`        | |  :func:`sentinel`     |
-| |  :func:`bool`         | |                     | |                     | |  :func:`slice`        |
+| |  :func:`bin`          | |  |func-frozendict|_ | |  :func:`min`        | |  :func:`sentinel`     |
+| |  :func:`bool`         | |  |func-frozenset|_  | |                     | |  :func:`slice`        |
 | |  :func:`breakpoint`   | |  **G**              | |  **N**              | |  :func:`sorted`       |
 | |  |func-bytearray|_    | |  :func:`getattr`    | |  :func:`next`       | |  :func:`staticmethod` |
 | |  |func-bytes|_        | |  :func:`globals`    | |                     | |  |func-str|_          |
@@ -44,6 +44,7 @@ are always available.  They are listed here in alphabetical order.
    used, with replacement texts to make the output in the table consistent
 
 .. |func-dict| replace:: ``dict()``
+.. |func-frozendict| replace:: ``frozendict()``
 .. |func-frozenset| replace:: ``frozenset()``
 .. |func-memoryview| replace:: ``memoryview()``
 .. |func-set| replace:: ``set()``
@@ -482,11 +483,11 @@ are always available.  They are listed here in alphabetical order.
            dict(iterable, /, **kwargs)
    :noindex:
 
-   Create a new dictionary.  The :class:`dict` object is the dictionary class.
+   Create a new mutable dictionary.  The :class:`dict` object is the dictionary class.
    See :class:`dict` and :ref:`typesmapping` for documentation about this class.
 
-   For other containers see the built-in :class:`list`, :class:`set`, and
-   :class:`tuple` classes, as well as the :mod:`collections` module.
+   For other containers see the built-in :class:`frozendict`, :class:`list`,
+   :class:`set`, and :class:`tuple` classes, as well as the :mod:`collections` module.
 
 
 .. function:: dir()
@@ -862,6 +863,19 @@ are always available.  They are listed here in alphabetical order.
    .. versionchanged:: 3.4
       ``object().__format__(format_spec)`` raises :exc:`TypeError`
       if *format_spec* is not an empty string.
+
+
+.. _func-frozendict:
+.. class:: frozendict(**kwargs)
+           frozendict(mapping, /, **kwargs)
+           frozendict(iterable, /, **kwargs)
+   :noindex:
+
+   Create a new frozen dictionary.  The :class:`frozendict` object is a builtin class.
+   See :class:`frozendict` and :ref:`typesmapping` for documentation about this class.
+
+   For other containers see the built-in :class:`dict`, :class:`list`, :class:`set`,
+   and :class:`tuple` classes, as well as the :mod:`collections` module.
 
 
 .. _func-frozenset:
